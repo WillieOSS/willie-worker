@@ -1,9 +1,9 @@
 {
-  "name": "moltbot-sandbox",
+  "name": "openclaw-sandbox",
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "description": "Run Moltbot personal AI assistant in a Cloudflare Sandbox",
+  "description": "Run Openclaw personal AI assistant in a Cloudflare Sandbox",
   "scripts": {
     "build": "vite build",
     "deploy": "npm run build && wrangler deploy",
@@ -26,7 +26,7 @@
     "@cloudflare/sandbox": "*",
     "@cloudflare/vite-plugin": "^1.0.0",
     "@cloudflare/workers-types": "^4.20250109.0",
-    "@types/node": "^22.0.0",
+    "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.3.0",
@@ -40,10 +40,10 @@
   "license": "Apache-2.0",
   "cloudflare": {
     "bindings": {
-      "ANTHROPIC_API_KEY": {
-        "description": "Your [Anthropic API key](https://console.anthropic.com/)."
+      "KIMI_API_KEY": {
+        "description": "Your [Kimi Code API key](https://kimi.com/code/)."
       },
-      "MOLTBOT_GATEWAY_TOKEN": {
+      "OPENCLAW_GATEWAY_TOKEN": {
         "description": "Token for gateway access. Generate with: openssl rand -hex 32"
       }
     }

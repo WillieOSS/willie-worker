@@ -10,7 +10,8 @@ Control headless browsers via Cloudflare's Browser Rendering service using CDP (
 ## Prerequisites
 
 - `CDP_SECRET` environment variable set
-- Browser profile configured in clawdbot.json with `cdpUrl` pointing to the worker endpoint:
+- Browser profile configured in openclaw.json with `cdpUrl` pointing to the worker endpoint:
+
   ```json
   "browser": {
     "profiles": {
@@ -24,11 +25,13 @@ Control headless browsers via Cloudflare's Browser Rendering service using CDP (
 ## Quick Start
 
 ### Screenshot
+
 ```bash
 node /path/to/skills/cloudflare-browser/scripts/screenshot.js https://example.com output.png
 ```
 
 ### Multi-page Video
+
 ```bash
 node /path/to/skills/cloudflare-browser/scripts/video.js "https://site1.com,https://site2.com" output.mp4
 ```
@@ -65,6 +68,7 @@ ws.on('message', (data) => {
 ## Common Patterns
 
 ### Navigate and Screenshot
+
 ```javascript
 await send('Page.navigate', { url: 'https://example.com' });
 await new Promise(r => setTimeout(r, 3000)); // Wait for render
@@ -73,11 +77,13 @@ fs.writeFileSync('out.png', Buffer.from(data, 'base64'));
 ```
 
 ### Scroll Page
+
 ```javascript
 await send('Runtime.evaluate', { expression: 'window.scrollBy(0, 300)' });
 ```
 
 ### Set Viewport
+
 ```javascript
 await send('Emulation.setDeviceMetricsOverride', {
   width: 1280,
