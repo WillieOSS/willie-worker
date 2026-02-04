@@ -31,7 +31,7 @@ adminApi.get('/devices', async (c) => {
     // Ensure openclaw is running first
     await ensureOpenclawGateway(sandbox, c.env);
 
-    // Run openclaw CLI to list devices (CLI is still named openclaw until upstream renames)
+    // Run openclaw CLI to list devices
     // Must specify --url to connect to the gateway running in the same container
     const proc = await sandbox.startProcess('openclaw devices list --json --url ws://localhost:18789');
     await waitForProcess(proc, CLI_TIMEOUT_MS);

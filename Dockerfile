@@ -1,7 +1,7 @@
 FROM docker.io/cloudflare/sandbox:0.7.0
 
 # Using direct binary download for reliability
-ENV NODE_VERSION=24.13.0
+ENV NODE_VERSION=22.13.1
 RUN ARCH="$(dpkg --print-architecture)" \
     && case "${ARCH}" in \
     amd64) NODE_ARCH="x64" ;; \
